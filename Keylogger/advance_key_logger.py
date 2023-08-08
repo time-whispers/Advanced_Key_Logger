@@ -111,7 +111,7 @@ def computer_information():
             f.write("Couldn't get Public IP Address (most likely max query")
 
         f.write("Processor: " + (platform.processor()) + '\n')
-        f.write("System: " + platform.system() + " " + platform.version() + '\n')
+        f.write("System: " + platform.system() + "\n" + platform.version() + '\n')
         f.write("Machine: " + platform.machine() + "\n")
         f.write("Hostname: " + hostname + "\n")
         f.write("Private IP Address: " + IPAddr + "\n")
