@@ -28,10 +28,10 @@ Note- key can be generated using the GenerateKey.py file and can be viewed from 
 # Future Udates and Modifications:
 - I will try to make it bypass antivirus.
 - I will try to implement more functionalities such as:
-      1. System files collection
-      2. Capture user login and logout session records
-      3. Video Recording
-      4. Many more
+  1. System files collection
+  2. Capture user login and logout session records
+  3. Video Recording
+  4. Many more
 
 # WARNING!!!
 
