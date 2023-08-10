@@ -1,8 +1,8 @@
 # Advanced Key Logger
 
-# Follow the Advanced Key Logger Guide to learn more about this project.
+## Follow the Advanced Key Logger Guide to learn more about this project.
 
-# Usage Instructions :
+## Usage Instructions :
 
 - Download the contents of The Repository as a Zip File or clone the Repository.
 
@@ -25,7 +25,7 @@ Note- key can be generated using the GenerateKey.py file and can be viewed from 
 
 - And the captured results will be shown in your mail as well as in different .txt files and also the captured image and audio will be in .png and .wav files respectively.
 
-# Future Udates and Modifications:
+## Future Udates and Modifications:
 - I will try to make it bypass antivirus.
 - I will try to implement more functionalities such as:
   1. System files collection
@@ -33,6 +33,6 @@ Note- key can be generated using the GenerateKey.py file and can be viewed from 
   3. Video Recording
   4. Many more
 
-# WARNING!!!
+## WARNING!!!
 
 Antivirus and Microsoft Defender will detect this keylogger and block it. So, if you want to access it, please disable them or set them to accept this python file.
