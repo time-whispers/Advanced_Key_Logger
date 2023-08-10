@@ -1,4 +1,4 @@
-Advanced Key Logger:
+# Advanced Key Logger
 
 # Follow the Advanced Key Logger Guide to learn more about this project.
 
