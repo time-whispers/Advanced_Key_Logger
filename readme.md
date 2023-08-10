@@ -33,6 +33,6 @@ Note- key can be generated using the GenerateKey.py file and can be viewed from 
   3. Video Recording
   4. Many more
 
-## WARNING!!!
+## WARNING!!! (Try it on your risk, I'm not responsible for any misuse or harmful intent)
 
 Antivirus and Microsoft Defender will detect this keylogger and block it. So, if you want to access it, please disable them or set them to accept this python file.
